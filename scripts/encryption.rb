@@ -4,5 +4,15 @@
 
 # TODO:
 # 1. encrypt a secret and puts encrypted string
+secret = "tacos"
+
 # 2. prepare encrypted string for testing
+
+encrypted_string = BCrypt::Password.create(secret)
+puts encrypted_string
 # 3. test secret against prepared encrypted string
+
+login_secret = "tacos"
+
+result = BCrypt::Password.new(encrypted_string) == login_secret
+puts result
